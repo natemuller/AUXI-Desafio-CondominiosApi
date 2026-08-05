@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="AutenticacaoApi.Tests/AutenticacaoApi.Tests.csproj" />
+  <Project Path="AutenticacaoApi/AutenticacaoApi.csproj" />
+  <Project Path="CondominiosApi.Tests/CondominiosApi.Tests.csproj" />
+  <Project Path="CondominiosApi/CondominiosApi.csproj" />
+  <Project Path="Core/Core.csproj" />
+</Solution>
