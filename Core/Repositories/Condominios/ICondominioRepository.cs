@@ -1,3 +1,5 @@
+using Core.Models;
+
 namespace Core.Repositories.Condominios;
 
 public interface ICondominioRepository

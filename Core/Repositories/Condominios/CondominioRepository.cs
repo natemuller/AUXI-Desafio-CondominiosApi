@@ -1,3 +1,5 @@
+using Core.Models;
+using Core.Persistence;
 using Microsoft.EntityFrameworkCore;
 
 namespace Core.Repositories.Condominios;
