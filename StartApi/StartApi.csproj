@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Core.csproj" />
+    <ProjectReference Include="..\AutenticacaoApi\AutenticacaoApi.csproj" />
+    <ProjectReference Include="..\CondominiosApi\CondominiosApi.csproj" />
+    <ProjectReference Include="..\BlocosApi\BlocosApi.csproj" />
+    <ProjectReference Include="..\UnidadesApi\UnidadesApi.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>ff00835a-dc0a-4741-95db-176a01a10677</UserSecretsId>
+  </PropertyGroup>
+
+</Project>

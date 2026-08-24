@@ -1,7 +1,12 @@
 <Solution>
   <Project Path="AutenticacaoApi.Tests/AutenticacaoApi.Tests.csproj" />
   <Project Path="AutenticacaoApi/AutenticacaoApi.csproj" />
+  <Project Path="BlocosApi.Tests/BlocosApi.Tests.csproj" />
+  <Project Path="BlocosApi/BlocosApi.csproj" />
   <Project Path="CondominiosApi.Tests/CondominiosApi.Tests.csproj" />
   <Project Path="CondominiosApi/CondominiosApi.csproj" />
   <Project Path="Core/Core.csproj" />
+  <Project Path="StartApi/StartApi.csproj" />
+  <Project Path="UnidadesApi.Tests/UnidadesApi.Tests.csproj" />
+  <Project Path="UnidadesApi/UnidadesApi.csproj" />
 </Solution>

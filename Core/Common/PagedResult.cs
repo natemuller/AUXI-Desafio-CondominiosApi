@@ -1,4 +1,4 @@
-namespace Core.Repositories.Condominios;
+namespace Core.Common;
 
 public sealed record PagedResult<T>(
     IReadOnlyCollection<T> Items,

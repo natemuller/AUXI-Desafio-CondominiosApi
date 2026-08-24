@@ -1,5 +1,9 @@
+using Core.Caching;
 using Core.Persistence;
+using Core.Repositories.Blocos;
 using Core.Repositories.Condominios;
+using Core.Repositories.Unidades;
+using Core.Repositories.Usuarios;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -27,6 +31,22 @@ public static class DependencyInjection
         services.AddScoped<
             ICondominioRepository,
             CondominioRepository>();
+
+        services.AddScoped<
+            IBlocoRepository,
+            BlocoRepository>();
+
+        services.AddScoped<
+            IUnidadeRepository,
+            UnidadeRepository>();
+
+        services.AddScoped<
+            IUsuarioRepository,
+            UsuarioRepository>();
+
+        services.Configure<CacheOptions>(configuration.GetSection("Cache"));
+
+        services.AddScoped<ICacheService, CacheService>();
 
         return services;
     }
