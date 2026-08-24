@@ -1,0 +1,35 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "autenticacao-api",
+      "runtimeExecutable": "dotnet",
+      "runtimeArgs": ["run", "--project", "AutenticacaoApi"],
+      "port": 5038
+    },
+    {
+      "name": "condominios-api",
+      "runtimeExecutable": "dotnet",
+      "runtimeArgs": ["run", "--project", "CondominiosApi"],
+      "port": 5216
+    },
+    {
+      "name": "blocos-api",
+      "runtimeExecutable": "dotnet",
+      "runtimeArgs": ["run", "--project", "BlocosApi"],
+      "port": 5299
+    },
+    {
+      "name": "unidades-api",
+      "runtimeExecutable": "dotnet",
+      "runtimeArgs": ["run", "--project", "UnidadesApi"],
+      "port": 5399
+    },
+    {
+      "name": "start-api",
+      "runtimeExecutable": "dotnet",
+      "runtimeArgs": ["run", "--project", "StartApi"],
+      "port": 5080
+    }
+  ]
+}

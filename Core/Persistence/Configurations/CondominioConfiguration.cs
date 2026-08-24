@@ -36,7 +36,7 @@ public sealed class CondominioConfiguration
             .HasColumnName("qtdblocos");
 
         builder.Property(x => x.QtdUnidades)
-            .HasColumnName("qtdunidades");
+            .HasColumnName("qtd_unidades");
 
         builder.Property(x => x.TotalFracao)
             .HasColumnName("totalfracao");
@@ -75,13 +75,13 @@ public sealed class CondominioConfiguration
             .HasColumnName("gestor");
 
         builder.Property(x => x.ConselhoFiscal)
-            .HasColumnName("conselhofiscal");
+            .HasColumnName("conselho_fiscal");
 
         builder.Property(x => x.ConselhoConsultivo)
-            .HasColumnName("conselhoconsultivo");
+            .HasColumnName("conselho_consultivo");
 
         builder.Property(x => x.ConselhoSuplente)
-            .HasColumnName("conselhosuplente");
+            .HasColumnName("conselho_suplente");
 
         builder.Property(x => x.TipoCondominio)
             .HasColumnName("tipocondominio");
@@ -108,16 +108,16 @@ public sealed class CondominioConfiguration
             .HasColumnName("cidade");
 
         builder.Property(x => x.Cep8Log)
-            .HasColumnName("cep8log");
+            .HasColumnName("cep8_log");
 
         builder.Property(x => x.Uf)
             .HasColumnName("uf");
 
         builder.Property(x => x.CodPessoaSindico)
-            .HasColumnName("codpessoasindico");
+            .HasColumnName("codpessoa_sindico");
 
         builder.Property(x => x.NomeSindico)
-            .HasColumnName("nomesindico");
+            .HasColumnName("nome_sindico");
 
         builder.Property(x => x.CpfDocnpj)
             .HasColumnName("cpfdocnpj");

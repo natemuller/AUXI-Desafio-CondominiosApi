@@ -1,3 +1,4 @@
+using Core.Common;
 using Core.Models;
 using Core.Persistence;
 using Microsoft.EntityFrameworkCore;
@@ -7,10 +8,10 @@ namespace Core.Repositories.Condominios;
 public sealed class CondominioRepository(AuxiDbContext dbContext)
     : ICondominioRepository
 {
-    private const int ItensPorPagina = 10;
-
     public async Task<PagedResult<Condominio>> ListarAsync(
         int pagina,
+        string? cnpj,
+        int? codCondom,
         string? nome,
         CancellationToken cancellationToken = default)
     {
@@ -18,6 +19,20 @@ public sealed class CondominioRepository(AuxiDbContext dbContext)
 
         IQueryable<Condominio> query = dbContext.Condominios
             .AsNoTracking();
+
+        if (!string.IsNullOrWhiteSpace(cnpj))
+        {
+            var filtro = cnpj.Trim();
+
+            query = query.Where(condominio =>
+                condominio.Cnpj == filtro);
+        }
+
+        if (codCondom.HasValue)
+        {
+            query = query.Where(condominio =>
+                condominio.CodCondom == codCondom.Value);
+        }
 
         if (!string.IsNullOrWhiteSpace(nome))
         {
@@ -35,17 +50,17 @@ public sealed class CondominioRepository(AuxiDbContext dbContext)
         var condominios = await query
             .OrderBy(condominio => condominio.NomeCondom)
             .ThenBy(condominio => condominio.CodCondom)
-            .Skip((pagina - 1) * ItensPorPagina)
-            .Take(ItensPorPagina)
+            .Skip((pagina - 1) * PaginationDefaults.ItensPorPagina)
+            .Take(PaginationDefaults.ItensPorPagina)
             .ToListAsync(cancellationToken);
 
         var totalPaginas = (int)Math.Ceiling(
-            totalItens / (double)ItensPorPagina);
+            totalItens / (double)PaginationDefaults.ItensPorPagina);
 
         return new PagedResult<Condominio>(
             condominios,
             pagina,
-            ItensPorPagina,
+            PaginationDefaults.ItensPorPagina,
             totalItens,
             totalPaginas);
     }
